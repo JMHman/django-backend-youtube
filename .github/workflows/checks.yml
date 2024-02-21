@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-20.04  # 실행할 가상공간 지정
     steps:
       - name: CheckOut
-        uses: actions?checkout@v2
+        uses: actions/checkout@v2
       - name: Test
         run: docker-compose run --rm app sh -c 'python manage.py test'
       - name: Lint
