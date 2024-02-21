@@ -1,0 +1,8 @@
+# 디장고 5.0.1 이상 6 미만
+django>=5.0.1,<6.0.0
+
+#
+djangorestframework>=3.14.0,<4.0.0
+
+
+# dckr_pat_KgL7QNIX4vKPfRO0JXEZUyzMy9s
