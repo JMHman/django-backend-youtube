@@ -29,8 +29,7 @@ RUN /py/bin/pip install --upgrade pip && \
     --no-create-home \ 
     django-user
 
-ENV PATH="/py/bin/:/usr/bin:$PATH"
-
+ENV PATH="/py/bin/:$PATH"
 
 USER django-user
 

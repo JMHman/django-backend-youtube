@@ -18,4 +18,4 @@ class Command(BaseCommand):
         self.stdout.write("Connection Trying...")
         time.sleep(1)
 
-    self.stdout.write(self.style.SUCCESS('PostreSQL Connections Success'))
+    self.stdout.write(self.style.SUCCESS('PostgreSQL Connections Success'))
