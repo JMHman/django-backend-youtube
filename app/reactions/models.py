@@ -13,7 +13,7 @@ class Reaction(CommonModel):
   # dislike = models.BoolenField(default=False)
 
   REACTION_CHOICES = (
-    (LIKE<'like'),
+    (LIKE, 'like'),
     (DISLIKE, 'dislike'),
     (NO_REACTION, 'No reaction'),
   )
