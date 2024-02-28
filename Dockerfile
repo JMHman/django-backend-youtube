@@ -12,7 +12,7 @@ COPY ./app /app
 WORKDIR /app
 EXPOSE 8000
 
-# ARG DEV=false
+ARG DEV=false
 RUN /py/bin/pip install --upgrade pip && \
   /py/bin/pip install -r /tmp/requirements.txt && \
   apt-get update && \

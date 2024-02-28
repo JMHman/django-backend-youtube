@@ -11,6 +11,9 @@ class Reaction(CommonModel):
   # boolean: True, False, None(x)
   # like = models.BoolenField(default=False)
   # dislike = models.BoolenField(default=False)
+  LIKE = 'like'
+  DISLIKE = 'dislike'
+  NO_REACTION = 'no_reaction'
 
   REACTION_CHOICES = (
     (LIKE, 'like'),
