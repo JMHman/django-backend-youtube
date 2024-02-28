@@ -12,7 +12,7 @@ from psycopg2 import OperationalError as Psycopg2_OpError
 class CommandTests(SimpleTestCase):
   # db 연결에 한 번에 성공했을 때
   def test_wait_for_db_ready(self, patched_getitem):
-    patched_getitem.return_yalue = True
+    patched_getitem.return_value = True
 
     call_command('wait_for_db')
 
