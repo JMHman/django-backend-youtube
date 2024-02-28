@@ -1,5 +1,6 @@
 version: '3.12'
 services:
+  # 1. First Container: Django
   app:
     build:
       context: .
@@ -10,4 +11,41 @@ services:
     volumes:
       - ./app:/app
     command:
-      sh -c "python manage.py runserver 0.0.0.0:8000"
+      sh -c "python manage.py wait_for_db && \
+            python manage.py migrate && \
+            python manage.py runserver 0.0.0.0:8000"
+    environment:
+      - DB_HOST=db
+      - DB_NAME=youtube
+      - DB_USER=joenmh0710
+      - DB_PASS=password123
+    depends_on:
+      - db
+
+
+  # 2. Second Container: PostgreSQL
+  db:
+    image: postgres:16
+
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=youtube
+      - POSTGRES_USER=joenmh0710
+      - POSTGRES_PASSWORD=password123
+
+    # 2. Second Container: MySQL # 이렇게도 가능하다.
+    # db:
+    #   image: mysql:  # 독커에서 검색해서 사용할 버전을 찾아보고 입력
+    #   # ports:
+    #   #   - "5432:5432"
+    #   volumes:
+    #     - ./data/db:/var/lib/mysql/data
+    #   environment:
+    #     - MYSQL_DB=youtube
+    #     - MYSQL_USER=joenmh0710
+    #     - MYSQL_PASSWORD=password123
+
+
+  # - db contaner => Django - db connection try
+  # - CustomUser Model

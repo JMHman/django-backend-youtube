@@ -1,8 +1,12 @@
 # 디장고 5.0.1 이상 6 미만
 django>=5.0.1,<6.0.0
 
-#
+# django rest framework
 djangorestframework>=3.14.0,<4.0.0
 
+# postgresql 랑 연결시켜주는 프로그램
+# psycopg2 - postgresql adapter
+psycopg2>=2.9.9,<3.0.0
 
+# docker key
 # dckr_pat_KgL7QNIX4vKPfRO0JXEZUyzMy9s
