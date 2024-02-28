@@ -13,7 +13,7 @@ class Command(BaseCommand):
 
     while not is_db_connected:
       try:
-        is_db_connected = connections["default"].cursor()
+        is_db_connected = connections["default"]
       except (Psycopg2_OpError, OperationalError):
         self.stdout.write("Connection Trying...")
         time.sleep(1)
