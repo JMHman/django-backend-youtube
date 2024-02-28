@@ -16,7 +16,7 @@ RUN python -m venv /py && \
   /py/bin/pip install -r /tmp/requirements.txt && \
   apt-get update && \
   apt-get install -y postgresql-client build-essential libpq-dev && \
-  if [ "$DEV" = "true" ] ; \
+  if [ $DEV = "true" ] ; \
     then echo "===THIS IS DEVELOPMENT BUILD===" && \
     /py/bin/pip install -r /tmp/requirements.dev.txt ; \
   fi && \
